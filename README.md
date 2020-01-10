@@ -42,3 +42,51 @@ QA(领头的测试者) | [林新棋](https://gitee.com/xinqi3050)
 1. 毕业后对应不上同学名字，忘记同学姓名
 2. 毕业后想找其他专业同学合作，不知道姓名及联系方式
 3. 毕业后同学联系互动少
+#### 需求列表与人工智能API加值
+
+title | User story |  importance |notes |技术
+--- | --- |--- |--- |---
+遗忘与回忆 | 毕业多年后后看到毕业照对应不上同学的名息|importance |核心功能|百度人脸识别api
+加强联系合作 | 毕业后联系少互动少|general|APP的毕业墙留言、送礼、临时会话|通讯技术、直播送礼相关技术
+趣味性 | 用户粘度不高|general|APP的定时推出最榜单|数据分析与利用
+
+用到的的api有**人脸检测、人脸识别、分类、信息匹配**。
+
+## 调用了face++人脸识别api
+* [旷视API调用代码档]()
+* [百度API调用代码档]()
+
+## questions（可解决问题）：
+1. 调用百度api、旷视api识别人脸
+2. 返回人脸姓名等个人信息
+3. 不公开隐私信息，有设置按钮，防止恶意骚扰
+
+## not doing（暂时不做）：
+ 1. 虚拟现实情景
+ 2. 数据榜单
+
+##### API1.使用水平
+1.  输入：点击/触摸毕业生头像
+2.  输出：毕业生信息（姓名，性别，院系、班级）
+
+#### API2.使用比较分析
+对比项 | face++ | 百度API
+---|---|---
+成熟度 |目前只有文字自定义训练库 | 比较好，有自定义图像训练库，还有训练报告
+性价比 | [有提供免费试用、WebAPI接入0.0005-0.01元/次](https://www.faceplusplus.com.cn/v2/pricing/)等 | 	[有提供免费试用、开通续费0.0007元/次](https://console.bce.baidu.com/ai/#/ai/imagerecognition/overview/index)
+
+#### API3.使用后风险报告
+* 单人特征识别中的性别识别。人脸识别仅能识别到人脸外貌更偏向女性还是男性，很难对女生男相、男生女相进行正确的判断。--已输出学生的姓名、专业为主。<br>
+- 人工智能概率性：由于照片人脸的角度、光线、发型问题，识别人脸会有出错几率。face_recognition是一个基于python的开源的人脸识别库，据说识别准确率达到了99.38%
+- [利用百度api物体检测平台](http://ai.baidu.com/easydl/image)尝试训练了一组图像，结果如图。建议：训练图片越多，训练精准度越高，笔者仅测试了7张照片，训练效果欠佳
+
+#### API4.加分项
+- 用到的的api有图像检测识别出人脸、自定义图像ID为姓名班级、利用百度开放平台进行自定义图像模型训练
+
+## 清单：
+* [百度api定制图像模型训练](http://ai.baidu.com/easydl/app/2/model)
+* [face++调用参考](https://blog.csdn.net/qq_37588821/article/details/80633563)
+* [百度api调用参考](https://blog.csdn.net/qq_40821981/article/details/81630552)
+* [dlib安装](https://www.cnblogs.com/AdaminXie/p/9032224.html)
+* [dlib训练连载](https://blog.csdn.net/hongbin_xu/article/details/78347484)
+* dlib库、cmake库安装完成、boost库安装未成功
