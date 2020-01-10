@@ -51,8 +51,8 @@ title | User story |  importance |notes |技术
 用到的的api有**人脸检测、人脸识别、分类、信息匹配**。
 
 ## 调用了face++人脸识别api
-* [旷视API调用代码档]()
-* [百度API调用代码档]()
+* [旷视API调用代码档](https://blog.csdn.net/qq_37588821/article/details/80633563)
+* [百度API调用代码档](https://blog.csdn.net/qq_40821981/article/details/81630552)
 
 ## questions（可解决问题）：
 1. 调用百度api、旷视api识别人脸
